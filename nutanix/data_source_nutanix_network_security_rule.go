@@ -5,7 +5,7 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/terraform-providers/terraform-provider-nutanix/utils"
+	"terraform-provider-nutanix/utils"
 
 	"github.com/hashicorp/terraform/helper/schema"
 )

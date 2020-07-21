@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	"github.com/hashicorp/terraform/helper/schema"
-	v3 "github.com/terraform-providers/terraform-provider-nutanix/client/v3"
-	"github.com/terraform-providers/terraform-provider-nutanix/utils"
+	v3 "terraform-provider-nutanix/client/v3"
+	"terraform-provider-nutanix/utils"
 )
 
 func dataSourceNutanixCluster() *schema.Resource {

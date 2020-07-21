@@ -3,8 +3,8 @@ package nutanix
 import (
 	"fmt"
 
-	"github.com/terraform-providers/terraform-provider-nutanix/client"
-	v3 "github.com/terraform-providers/terraform-provider-nutanix/client/v3"
+	"terraform-provider-nutanix/client"
+	v3 "terraform-provider-nutanix/client/v3"
 )
 
 // Version represents api version

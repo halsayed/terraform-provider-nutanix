@@ -32,24 +32,20 @@ data "nutanix_project" "project" {
   project_id = "447a90f8-87f0-484f-803f-336dc60206a8"
 }
 
-//data "nutanix_market_items" "items" {}
+data "nutanix_marketplace_items" "items" {}
 
 //output "project" {
 //  value = data.nutanix_project.project
 //}
 
-//resource "nutanix_application" "application" {
-//  marketitem_uuid = "9fc0303a-909d-4e0f-a5e7-9bca300eb58e"
-//  project_uuid = "447a90f8-87f0-484f-803f-336dc60206a8"
-//  environment_uuid = "19b7122e-b470-8e3c-9b3c-0d6a0f8ea7b9"
-//  name = "somewhere-app3"
-//  description = "somere first app"
-//}
+resource "nutanix_application" "application" {
+  marketitem_uuid = "9fc0303a-909d-4e0f-a5e7-9bca300eb58e"
+  project_uuid = "447a90f8-87f0-484f-803f-336dc60206a8"
+  environment_uuid = "19b7122e-b470-8e3c-9b3c-0d6a0f8ea7b9"
+  name = "somewhere-app5"
+  description = "somere first app"
+}
 
-//output "items" {
-//  value = data.nutanix_market_items.items.*
-//}
-//
 output "projects" {
   value = data.nutanix_projects.projects.*
 }
@@ -60,4 +56,8 @@ output "image" {
 
 output "project" {
   value = data.nutanix_project.project
+}
+
+output "items" {
+  value = data.nutanix_marketplace_items.items.*
 }

@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/hashicorp/terraform/flatmap"
-	"github.com/terraform-providers/terraform-provider-nutanix/utils"
+	"terraform-provider-nutanix/utils"
 )
 
 // based on AWS Provider we should change for us

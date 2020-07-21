@@ -3,12 +3,12 @@ package nutanix
 import (
 	"github.com/hashicorp/terraform/helper/resource"
 	"github.com/hashicorp/terraform/helper/schema"
-	v3 "github.com/halsayed/terraform-provider-nutanix/client/v3"
+	v3 "terraform-provider-nutanix/client/v3"
 )
 
-func dataSourceNutanixMarketItems() *schema.Resource {
+func dataSourceNutanixMarketplaceItems() *schema.Resource {
 	return &schema.Resource{
-		Read: dataSourceNutanixMarketItemsRead,
+		Read: dataSourceNutanixMarketplaceItemsRead,
 		SchemaVersion: 1,
 		Schema: map[string]*schema.Schema{
 			"api_version": {
@@ -67,7 +67,7 @@ func dataSourceNutanixMarketItems() *schema.Resource {
 	}
 }
 
-func dataSourceNutanixMarketItemsRead(d *schema.ResourceData, meta interface{}) error {
+func dataSourceNutanixMarketplaceItemsRead(d *schema.ResourceData, meta interface{}) error {
 	//Get client connection
 	conn := meta.(*Client).API
 
@@ -79,7 +79,7 @@ func dataSourceNutanixMarketItemsRead(d *schema.ResourceData, meta interface{}) 
 	if err := d.Set("api_version", resp.APIVersion); err != nil {
 		return err
 	}
-	if err := d.Set("entities", flattenMarketItemsEntities(resp.Entities)); err != nil {
+	if err := d.Set("entities", flattenMarketplaceItemsEntities(resp.Entities)); err != nil {
 		return err
 	}
 
@@ -87,7 +87,7 @@ func dataSourceNutanixMarketItemsRead(d *schema.ResourceData, meta interface{}) 
 	return nil
 }
 
-func flattenMarketItemsEntities(items []*v3.MarketItem) []map[string]interface{} {
+func flattenMarketplaceItemsEntities(items []*v3.MarketItem) []map[string]interface{} {
 	entities := make([]map[string]interface{}, len(items))
 
 	for i, item := range items {

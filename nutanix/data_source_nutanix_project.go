@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/cast"
 
 	"github.com/hashicorp/terraform/helper/schema"
-	v3 "github.com/terraform-providers/terraform-provider-nutanix/client/v3"
+	v3 "terraform-provider-nutanix/client/v3"
 )
 
 func dataSourceNutanixProject() *schema.Resource {

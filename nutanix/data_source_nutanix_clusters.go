@@ -6,7 +6,7 @@ import (
 
 	"github.com/hashicorp/terraform/helper/resource"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/terraform-providers/terraform-provider-nutanix/utils"
+	"terraform-provider-nutanix/utils"
 )
 
 func dataSourceNutanixClusters() *schema.Resource {

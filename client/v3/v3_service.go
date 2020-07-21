@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/terraform-providers/terraform-provider-nutanix/client"
-	"github.com/terraform-providers/terraform-provider-nutanix/utils"
+	"terraform-provider-nutanix/client"
+	"terraform-provider-nutanix/utils"
 )
 
 // Operations ...
@@ -71,6 +71,16 @@ type Service interface {
 	ListAllProject() (*ProjectListResponse, error)
 	UpdateProject(uuid string, body *Project) (*Project, error)
 	DeleteProject(uuid string) error
+	ListAllMarketItem() (*MarketItemListResponse, error)
+	ListMarketItem(getEntitiesRequest *DSMetadata) (*MarketItemListResponse, error)
+	GetMarketItem(uuid string) (*MarketItemSpecResponse, error)
+	CloneBlueprint(blueprint *BlueprintCloneRequest) (*BlueprintCloneResponse, error)
+	GetBlueprint(uuid string) (*BlueprintGetResponse, error)
+	LaunchBlueprint(blueprint *BlueprintLaunchRequest) (*BlueprintLaunchResponse, error)
+	ListApplications(getEntitiesRequest *DSMetadata) (*ApplicationListResponse, error)
+	ListAllApplications () (*ApplicationListResponse, error)
+	GetApplication(uuid string) (*ApplicationGetResponse, error)
+	DeleteApplication(uuid string) (*ApplicationDeleteResponse, error)
 }
 
 /*CreateVM Creates a VM

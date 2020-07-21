@@ -1,7 +1,7 @@
 package v3
 
 import (
-	"github.com/terraform-providers/terraform-provider-nutanix/client"
+	"terraform-provider-nutanix/client"
 )
 
 // Client manages the V3 API
